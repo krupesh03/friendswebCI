@@ -22,12 +22,13 @@
     <?php echo $this->session->flashdata('storymsg');?>
 
     <?php 
+    global $site_title;
     if ( date('m', strtotime($this->session->userdata('dob'))) == date('m') && date('d', strtotime($this->session->userdata('dob'))) == date('d') ){
         $rand = rand(1,6);
         $image_path = base_url().'assets/images/dob/hbd'.$rand.'.jpg';
         ?>
         <div class="wish-birthday">
-            <p>On behalf of Friendsbook team... We wish you a</p>
+            <p>On behalf of <?php echo $site_title;?> team... We wish you a</p>
             <img src="<?php echo $image_path;?>" width="90px" height="90px">
         </div>
     <?php

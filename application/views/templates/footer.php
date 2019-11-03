@@ -1,8 +1,9 @@
+<?php global $site_title;?>
 <footer class="text-center">
     <div class="container">
         <div class="row">
             <div class="col-xs-12" style="padding: 10px;">
-                <p>Copyright © friendsbook. All rights reserved.</p>
+                <p>Copyright © <?php echo strtolower($site_title);?>. All rights reserved.</p>
             </div>
         </div>
     </div>

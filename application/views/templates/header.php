@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/main.css">
 </head>
 <body>
-<?php if($this->session->has_userdata('logged_in')){?>
+<?php 
+global $site_title;
+if($this->session->has_userdata('logged_in')){?>
     <nav class="navbar navbar-default">
         <div class="container-fluid"> 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="<?php echo site_url('Myaccount');?>"><img alt="140x140" class="display-icon" src="<?php echo base_url();?>assets/icons/facebook.jpg"></a><a class="navbar-brand" href="<?php echo site_url('Myaccount');?>"><font color='black'><b>FriendsBook</b></font></a> 
+                <a class="navbar-brand" href="<?php echo site_url('Myaccount');?>"><img alt="140x140" class="display-icon" src="<?php echo base_url();?>assets/icons/facebook.jpg"></a><a class="navbar-brand" href="<?php echo site_url('Myaccount');?>"><font color='black'><b><?= $site_title;?></b></font></a> 
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -139,7 +141,7 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
 				<a class="navbar-brand" href="<?php echo site_url('/');?>">
-                    <img alt="140x140" class="display-icon" src="<?php echo base_url();?>assets/icons/facebook.jpg"></a><a class="navbar-brand" href="<?php echo site_url('/');?>"><font color='black'><b>FriendsBook</b></font>
+                    <img alt="140x140" class="display-icon" src="<?php echo base_url();?>assets/icons/facebook.jpg"></a><a class="navbar-brand" href="<?php echo site_url('/');?>"><font color='black'><b><?php echo $site_title;?></b></font>
                 </a> 
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

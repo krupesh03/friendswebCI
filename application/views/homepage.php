@@ -1,9 +1,9 @@
-
+<?php global $site_title;?>
 	<div class="jumbotron">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-6">
-					<h1 class="text-center">Welcome to FriendsBook</h1>
+					<h1 class="text-center">Welcome to <?php echo $site_title;?></h1>
 					<p class="text-center">No more <b>Boring</b> time!! No more <b>Sleeping</b> time!! Just <b>signup</b> and enjoy unlimited fun!!</p>
 				</div>
 				<div class="col-xs-6">

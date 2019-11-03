@@ -12,6 +12,8 @@ class Forgotpassword extends AUTH_controller {
 	}
 
 	public function send_link() {
+
+        global $site_title;
         $args = array(
             array(
                 'field' => 'email',
@@ -31,7 +33,7 @@ class Forgotpassword extends AUTH_controller {
                 $site = site_url('Forgotpassword/resetpwd');
                 $message ="Hi ".$values['fname']." ".$values['lname']."\n\nClick on the below link to reset your password\n$site";
                 $subject = "Password Reset Link";
-                $this->email->from('accounts@friendsbook.com','FriendsBook');
+                $this->email->from('accounts@'.strtolower($site_title).'.com', $site_title);
                 $this->email->to($this->input->post('email'));
                 $this->email->subject($subject);
                 $this->email->message($message);
