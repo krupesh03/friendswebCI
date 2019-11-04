@@ -7,7 +7,7 @@
                     <h3>Find your Account</h3>
                 </div>
                 <div class="text-center col-lg-12">
-                    <?php echo form_open('Forgotpassword/send_link');?>
+                    <?php echo form_open('get_link');?>
                         <div class="form-group">
                             <label for="email">Email ID</label>
                             <input type="text" class="form-control" id="email" name="email" value="<?php echo set_value('email');?>" placeholder="Email ID">

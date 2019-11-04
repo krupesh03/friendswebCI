@@ -12,7 +12,7 @@
 						<p>It's free and always will be.</p>
 					</div>
 					<div class="text-center col-lg-12"> 
-						<?php echo form_open('Signup');?>
+						<?php echo form_open('create_user');?>
 							<div class="form-group">
 								<label for="fname">First Name</label>
 								<?php echo form_error('fname', '<div class="error">', '</div>');?>

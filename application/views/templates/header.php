@@ -159,7 +159,7 @@ if($this->session->has_userdata('logged_in')){?>
 				</form>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<?php echo site_url('Forgotpassword');?>">Forgotten Account?</a></li>
+					<li><a href="<?php echo site_url('forgot_password');?>">Forgotten Account?</a></li>
 				</ul>
 			</div>
 		</div>
