@@ -25,7 +25,7 @@ class Getcontroller extends AUTH_Controller {
                 }
             }
 
-            $config['base_url'] = site_url('Getcontroller/loadRecord');
+            $config['base_url'] = site_url('user_stories');
             $config['use_page_numbers'] = TRUE;
             $config['total_rows'] = $allcount;
             $config['per_page'] = $rowperpage;

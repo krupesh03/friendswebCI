@@ -1,6 +1,6 @@
 function loadPagination(pageno) {
     $.ajax({
-        url: site_url+'Getcontroller/loadRecord/'+pageno,
+        url: site_url+'user_stories/'+pageno,
         type: 'get',
         dataType: 'json',
         success: function(r) {

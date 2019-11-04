@@ -54,5 +54,6 @@ $route['default_controller'] = 'home';
 $route['forgot_password'] = 'Forgotpassword';
 $route['create_user'] = 'Signup';
 $route['get_link'] = 'Forgotpassword/send_link';
+$route['user_stories/(:num)'] = 'Getcontroller/loadRecord/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
