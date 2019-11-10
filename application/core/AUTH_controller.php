@@ -1,14 +1,5 @@
 <?php
 class AUTH_controller extends CI_Controller {
-    public function __construct() {
-        parent::__construct();
-        $CI =& get_instance();
-        $CI->load->helper('url');
-        $CI->config->item('base_url');
-        if( !$CI->session->userdata('logged_in') ) {
-            //redirect('/');
-        }
-    }
 
     function time_elapsed_string($datetime, $full = false) {
         $now = new DateTime;
