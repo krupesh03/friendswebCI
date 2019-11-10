@@ -17,7 +17,7 @@ if($this->session->has_userdata('logged_in')){?>
         <div class="container-fluid"> 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="<?php echo site_url('Myaccount');?>"><img alt="140x140" class="display-icon" src="<?php echo base_url();?>assets/icons/facebook.jpg"></a><a class="navbar-brand" href="<?php echo site_url('Myaccount');?>"><font color='black'><b><?= $site_title;?></b></font></a> 
+                <a class="navbar-brand" href="<?php echo site_url('myaccount');?>"><img alt="140x140" class="display-icon" src="<?php echo base_url();?>assets/icons/facebook.jpg"></a><a class="navbar-brand" href="<?php echo site_url('myaccount');?>"><font color='black'><b><?= $site_title;?></b></font></a> 
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -27,7 +27,7 @@ if($this->session->has_userdata('logged_in')){?>
                         </a> 
                     </li>
                     <li>
-                        <a href="<?php echo site_url('Myaccount/myprofile');?>" title="<?php echo strtolower($userdata['fname']).".".strtolower($userdata['lname']);?>">
+                        <a href="<?php echo site_url('myprofile');?>" title="<?php echo strtolower($userdata['fname']).".".strtolower($userdata['lname']);?>">
                         <font color='black'><b><?php echo ucfirst($userdata['fname'])." ".ucfirst($userdata['lname']);?></b></font>
                         </a>
                     </li>
@@ -99,11 +99,11 @@ if($this->session->has_userdata('logged_in')){?>
                         </a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="<?php echo site_url('Myaccount');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/home-icon.jpg"> Home
+                            <a href="<?php echo site_url('myaccount');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/home-icon.jpg"> Home
                             </a> 
                         </li>
                         <li>
-                            <a href="<?php echo site_url('Myaccount/myprofile');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/edit-profile.jpg"> Profile</a> 
+                            <a href="<?php echo site_url('myprofile');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/edit-profile.jpg"> Profile</a> 
                         </li>
                         <li>
                             <a href="#"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/friends-notify.png"> Friends</a> 
@@ -116,7 +116,7 @@ if($this->session->has_userdata('logged_in')){?>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="<?php echo site_url('Authenticate/logout');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/logout.png"> LogOut</a> 
+                            <a href="<?php echo site_url('logout');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/logout.png"> LogOut</a> 
                         </li>
                     </ul>
                 </li>

@@ -50,10 +50,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
+//for default controller
 $route['default_controller'] = 'home';
+
+//for forgot password
 $route['forgot_password'] = 'Forgotpassword';
+$route['password_reset_link'] = 'Forgotpassword/send_link';
+$route['reset_password'] = 'Forgotpassword/resetpwd';
+$route['reset_your_password'] = 'Insertcontrol/resetpass_control';
+
+//for signup functionality
 $route['create_user'] = 'Signup';
-$route['get_link'] = 'Forgotpassword/send_link';
+
+//for pagination
 $route['user_stories/(:num)'] = 'Getcontroller/loadRecord/$1';
+
+//for after login
+$route['myaccount'] = 'Myaccount';
+$route['myprofile'] = 'Myaccount/myprofile';
+
+//for friend filter
+$route['getfriendlist'] = 'Getcontroller/getfriendlist';
+
+//for upload story
+$route['new_story'] = 'Insertcontrol/upload_story';
+
+//for updating user images
+$route['update_profile_image'] = 'Insertcontrol/update_profile';
+
+//for logout
+$route['logout'] = 'Authenticate/logout';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

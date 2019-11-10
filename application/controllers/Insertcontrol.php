@@ -33,13 +33,13 @@ class Insertcontrol extends AUTH_Controller {
                                         Password has been reset
                                     </div>";
                 $this->session->set_flashdata('msg',$success_message);
-                redirect('Forgotpassword/resetpwd');
+                redirect('reset_password');
             } else {
                 $failed_message = "<div class='login_failed_msg'>
                                         Email ID does not exists or Password reset link is not valid
                                     </div>";
                 $this->session->set_flashdata('msg',$failed_message);
-                redirect('Forgotpassword/resetpwd');
+                redirect('reset_password');
             }
         }
     }
@@ -66,7 +66,7 @@ class Insertcontrol extends AUTH_Controller {
                     </div>";
         }
         $this->session->set_flashdata('storymsg', $msg);
-        redirect('Myaccount');
+        redirect('myaccount');
     }
 
     public function update_profile() {
@@ -98,12 +98,12 @@ class Insertcontrol extends AUTH_Controller {
                                         ".$error['error']."
                                     </div>";
                 $this->session->set_flashdata('upload_error', $upload_error_msg);
-                redirect('Myaccount/myprofile');
+                redirect('myprofile');
             }
         }
         if ($update==1) {
             $this->Insertdata->update_profile_m();
-            redirect('Myaccount/myprofile');
+            redirect('myprofile');
         } 
     }
 

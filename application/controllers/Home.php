@@ -11,7 +11,7 @@ class Home extends AUTH_Controller {
 		}
 
 		if( $this->session->has_userdata('logged_in') ) {
-			redirect('Myaccount');
+			redirect('myaccount');
 		}
 		
 		$data['title'] = 'Welcome to the '.$site_title;

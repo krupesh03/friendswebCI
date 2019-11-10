@@ -1,6 +1,6 @@
 <div class="col-md-6 news-feed">
     <p class="text-center">What's in your mind?!</p>
-    <?php echo form_open_multipart('Insertcontrol/upload_story');?>
+    <?php echo form_open_multipart('new_story');?>
         <div class="row">
             <div class="col-md-5">
                 <div class="form-group">

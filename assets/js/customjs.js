@@ -9,7 +9,7 @@ $(document).ready(function(){
         $('.loader-div').show();
         var search_term = $(this).val();
         $.ajax({
-            url: site_url+'Getcontroller/getfriendlist/',
+            url: site_url+'getfriendlist/',
             type: 'post',
             data: {
                 search_term : search_term

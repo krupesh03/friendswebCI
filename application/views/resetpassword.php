@@ -7,7 +7,7 @@
                         <h3>Reset Password</h3>
                     </div>
                     <div class="text-center col-lg-12">
-                        <?php echo form_open('Insertcontrol/resetpass_control');?>
+                        <?php echo form_open('reset_your_password');?>
                             <div class="form-group">
                                 <label for="email">Email ID</label>
                                 <input type="text" class="form-control" id="email" name="email" placeholder="Email ID" value="<?php echo set_value('email');?>">

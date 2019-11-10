@@ -36,7 +36,7 @@
                 <h4></h4>
             </div>
             <div class="modal-body">
-                <?php echo form_open_multipart('Insertcontrol/update_profile');?>
+                <?php echo form_open_multipart('update_profile_image');?>
                     <div class="form-group">
                         <input type="file" class="form-control" id="" name="" required>
                         <input type="hidden" id="uflag" name="uflag" value="">

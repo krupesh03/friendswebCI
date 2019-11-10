@@ -30,7 +30,7 @@ class Forgotpassword extends AUTH_controller {
         } else {
             $values = $this->Getdata->getdata_on_email();
             if( count($values)!=0 ) {
-                $site = site_url('Forgotpassword/resetpwd');
+                $site = site_url('reset_password');
                 $message ="Hi ".$values['fname']." ".$values['lname']."\n\nClick on the below link to reset your password\n$site";
                 $subject = "Password Reset Link";
                 $this->email->from('accounts@'.strtolower($site_title).'.com', $site_title);
@@ -55,7 +55,7 @@ class Forgotpassword extends AUTH_controller {
                                     </div>";
                 $this->session->set_flashdata('msg',$failed_message);
             }
-            redirect('Forgotpassword');
+            redirect('forgot_password');
         }
     }
 
