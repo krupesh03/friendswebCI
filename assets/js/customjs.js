@@ -1,30 +1,23 @@
 
 $(document).ready(function(){
+
     $(document).on('click', '#fpCancel', function(){
         window.location.href = site_url;
     });
 
+    var typingTimer;
     $(document).on('keyup', '#search_friends', function(){
+        clearTimeout(typingTimer);
         $('.friend_list').html('');
         $('.loader-div').show();
         var search_term = $(this).val();
-        $.ajax({
-            url: site_url+'getfriendlist/',
-            type: 'post',
-            data: {
-                search_term : search_term
-            },
-            success: function(response){
-                setTimeout(function(){
-                    $('.loader-div').hide();
-                    if(search_term==''){
-                        $('.friend_list').html('');
-                    }else{
-                        $('.friend_list').html(response);
-                    }
-                },2000);
-            }
-        });
+        typingTimer = setTimeout(function() {
+            ajax_search_friends(search_term)
+        }, 1000);
+    });
+
+    $(document).on('keydown', '#search_friends', function() {
+        clearTimeout(typingTimer);
     });
 
     $(document).on('click', '#close-button', function(){
@@ -133,4 +126,25 @@ $(document).ready(function(){
             }
         });
     });
+
+    $(document).on('submit', '#post_image_form', function(e) {
+        e.preventDefault();
+        $('#submit_post').attr('disabled', true);
+        var formData = new FormData(this);
+        $.ajax({
+            url: site_url+'/new_story',
+            type: 'post',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData: false,
+            success: function(r) {
+                loadPagination(0);
+                $('#story_post').val('');
+                $('#story_file').val('');
+                $('#submit_post').attr('disabled', true);
+            }
+        });
+    });
+
 });

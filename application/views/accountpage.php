@@ -1,22 +1,20 @@
 <div class="col-md-6 news-feed">
     <p class="text-center">What's in your mind?!</p>
-    <?php echo form_open_multipart('new_story');?>
-        <div class="row">
-            <div class="col-md-5">
-                <div class="form-group">
-                    <textarea type="text" class="form-control" name="story_post" id="story_post" placeholder="Post a status update!"></textarea>
-                </div>
+    <form id="post_image_form">
+        <div class="col-md-6">
+            <div class="form-group">
+                <textarea type="text" class="form-control" name="story_post" id="story_post" placeholder="Post a status update!"></textarea>
             </div>
-            <div class="col-md-5">
-                <div class="form-group">
-                    <input type="file" class="form-control" name="story_file" id="story_file">
-                </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="file" class="form-control" name="story_file" id="story_file" style="height: 54px;">
             </div>
-            <div class="col-md-2">
-                <div class="form-group">
-                    <button type="submit" name="submit_post" id="submit_post" class="btn btn-primary" disabled>POST</button>
-                </div>
-            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                <button type="submit" name="submit_post" id="submit_post" class="btn btn-primary btn-block" disabled>POST</button>
+           </div>
         </div>
     </form>
     <?php echo $this->session->flashdata('storymsg');?>

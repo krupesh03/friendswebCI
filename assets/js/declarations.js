@@ -36,7 +36,7 @@ function createTable(result, row) {
         if(story!='' && story!=undefined && result[i].file!='' && result[i].file!=undefined){
             post = story+"<br><br>"+image;
         }
-        var html = "<div class='story-count'>"+ pp +"<span class='user-name'>"+ name +"</span><span class='elapsed-time'>"+ time +"</span><a class='like-button "+dynamic_class+"' data-id='"+ sid +"'>Like<span class='like-cnt' data-id='"+ likes +"'>"+ likes +"</span></a>";
+        var html = "<div class='story-count'>"+ pp +"<span class='user-name'>"+ name +"</span><span class='elapsed-time'>"+ time +"</span><a class='like-button "+dynamic_class+"' data-id='"+ sid +"'><i class='fa fa-thumbs-o-up' aria-hidden='true'></i><span class='like-cnt' data-id='"+ likes +"'>"+ likes +"</span></a>";
         html += "<div class='story-file'>"+ post +"</div>";
         html += "</div><hr>";
         $('.news-feed .story-div').append(html);
@@ -72,4 +72,24 @@ function InObject(needle, object) {
         }
     }
     return false;
+}
+
+function ajax_search_friends(search_term) {
+
+    $.ajax({
+        url: site_url+'getfriendlist/',
+        type: 'post',
+        data: {
+            search_term : search_term
+        },
+        success: function(response){
+            $('.loader-div').hide();
+            if(search_term==''){
+                $('.friend_list').html('');
+            }else{
+                $('.friend_list').html(response);
+            }
+        }
+    });
+
 }

@@ -8,6 +8,7 @@
     <title><?= $title;?></title>
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <?php 
@@ -35,17 +36,17 @@ if($this->session->has_userdata('logged_in')){?>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"> 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="system-icons" src="<?php echo site_url();?>assets/images/bg/msg1.jpg"> <span class="caret"></span>
+                            <i class="fa fa-comments" aria-hidden="true"></i> <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <a href="#"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/msg1.jpg"> <span style="color:red;">(Coming Soon)</span></a> 
+                                <a href='#'><i class="fa fa-comments" aria-hidden="true"></i> <span style="color:red;">(Coming Soon)</span></a> 
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="system-icons" src="<?php echo site_url();?>assets/images/bg/birthday.jpg"><span style="color:red;"><b><?php echo count($friendData);?></b></span><span class="caret"></span>
+                            <i class="fa fa-birthday-cake" aria-hidden="true"></i><span style="color:red;"><b><?php echo count($friendData);?></b></span><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                         <?php
@@ -62,7 +63,7 @@ if($this->session->has_userdata('logged_in')){?>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="system-icons" src="<?php echo site_url();?>assets/images/bg/friend-request.png"><span style="color:red;"><b><?php echo count($friendRequest);?></b></span><span class="caret"></span>
+                            <i class="fa fa-handshake-o" aria-hidden="true"></i><span style="color:red;"><b><?php echo count($friendRequest);?></b></span><span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
                         <?php
@@ -79,7 +80,7 @@ if($this->session->has_userdata('logged_in')){?>
                     </li>
                     <li class="dropdown"> 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="system-icons" src="<?php echo site_url();?>assets/images/bg/friend-request-accept.jpg"><span style="color:red;"><b><?= count($friendResponse);?></b></span> <span class="caret"></span>
+                            <i class="fa fa-globe" aria-hidden="true"></i><span style="color:red;"><b><?= count($friendResponse);?></b></span> <span class="caret"></span>
                         </a>
                         <?php
                         $response_msg = '';
@@ -95,35 +96,35 @@ if($this->session->has_userdata('logged_in')){?>
                     </li>
                     <li class="dropdown"> 
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            <img class="system-icons" src="<?php echo site_url();?>assets/images/bg/menu.jpg"> <span class="caret"></span>
+                            <i class="fa fa-align-justify" aria-hidden="true"></i> <span class="caret"></span>
                         </a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="<?php echo site_url('myaccount');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/home-icon.jpg"> Home
+                            <a href="<?php echo site_url('myaccount');?>"><i class="fa fa-home" aria-hidden="true"></i> Home
                             </a> 
                         </li>
                         <li>
-                            <a href="<?php echo site_url('myprofile');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/edit-profile.jpg"> Profile</a> 
+                            <a href="<?php echo site_url('myprofile');?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a> 
                         </li>
                         <li>
-                            <a href="#"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/friends-notify.png"> Friends</a> 
+                            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Friends</a> 
                         </li>
                         <li>
-                            <a href="#"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/notification.png"> Notifications</a> 
+                            <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a> 
                         </li>
                         <li>
-                            <a href="#"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/settings.png"> Settings</a> 
+                            <a href="#"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a> 
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="<?php echo site_url('logout');?>"><img class="system-icons" src="<?php echo site_url();?>assets/images/bg/logout.png"> LogOut</a> 
+                            <a href="<?php echo site_url('logout');?>"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a> 
                         </li>
                     </ul>
                 </li>
                 </ul>
                 <div class="navbar-form navbar-right">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="search_friends" id="search_friends" style="width:500px;"placeholder="Search Friends" autocomplete="off">
+                        <input type="text" class="form-control" name="search_friends" id="search_friends" style="width:500px;"placeholder="Search friends..." autocomplete="off">
                     </div>
                     <div class="loader-div" style="display:none">
                         <img src="<?php echo base_url();?>assets/images/loader/loader1.gif" width="50px" height="10px">
