@@ -43,60 +43,75 @@ body {
     }
 }
 
-.navbar-right{
-    .loader-div{
-        text-align: center;
-        position: absolute;
-        top: 37px;
-        width: 500px;
-        background-color: transparent;
-        border-radius: 2px;
-    }
-    .friend_list{
-        position: fixed;
-        top: 45px;
-        width: 500px;
-        background-color: #e7e7e7; 
-        border-radius: 2px;
-        z-index: 10;
-        .close-button{
-            position: absolute;
-            right: -25px;
-            background-color: @theme-color;
-            height: 26px;
-            color: @text-color;
-            border-radius: 17px;
-        }
-        .friends_class{
-            padding: 4px;
-            height: 57px;
-            border: 1px solid #a79797;
-            border-radius: 2px;
-            .friend-name, .friend-mail{
-                text-align: center;
-            }
-            .image-class-list{
-                width: 40px; 
-                height: 40px; 
-                position: relative; 
-                bottom:37px;
-            }
-        }
-        .friends_class:hover{
-            background-color: @theme-color;
-            color: @text-color;
-            cursor: pointer;
-        }
-        .break-line{
-            height: 1px;
-            background-color: white;
-        }
-        .load-more{
+.navbar-collapse{
+    .search-div-class{
+        padding-top: 6px;
+        .loader-div{
             text-align: center;
-            font-size: 12px;
+            display: none;
+            .loader-image{
+                width: 50px;
+                height: 10px;
+            }
+        }
+        .friend_list{
+            display: none;
+            position: static;
             padding: 5px;
-            border: 1px solid #a79797;
+            background-color: #fff; 
             border-radius: 2px;
+            z-index: 10;
+            .friends_class{
+                padding: 4px;
+                height: 57px;
+                border: 1px solid #a79797;
+                border-radius: 2px;
+                .friend-name{
+                    font-weight: bold;
+                    margin-left: 55px;
+                    margin-top: -40px;
+                }
+                .friend-mail{
+                    margin-left: 55px;
+                    color: grey;
+                    font-size: 12px;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-style: italic;
+                }
+                .image-class-list{
+                    width: 40px; 
+                    height: 45px; 
+                    position: relative;
+                }
+                &:hover{
+                    background-color: @theme-color;
+                    color: @text-color;
+                    cursor: pointer;
+                    .friend-mail{
+                        color: @text-color;
+                    }
+                }
+            }
+            .close-button{
+                position: absolute;
+                right: -10px;
+                background-color: @theme-color;
+                height: 26px;
+                color: @text-color;
+                border-radius: 17px;
+            }
+            .break-line{
+                height: 1px;
+                background-color: white;
+            }
+            .load-more{
+                text-align: center;
+                font-size: 12px;
+                padding: 5px;
+                border: 1px solid #a79797;
+                border-radius: 2px;
+                font-weight: bold;
+            }
         }
     }
 }
@@ -251,6 +266,5 @@ footer{
 .btn{
     background-color: @theme-color;
     border-color: @theme-color; 
-    /*margin-left: 15px;*/
 }
 

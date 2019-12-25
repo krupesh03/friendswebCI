@@ -98,38 +98,36 @@ if($this->session->has_userdata('logged_in')){?>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <i class="fa fa-align-justify" aria-hidden="true"></i> <span class="caret"></span>
                         </a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="<?php echo site_url('myaccount');?>"><i class="fa fa-home" aria-hidden="true"></i> Home
-                            </a> 
-                        </li>
-                        <li>
-                            <a href="<?php echo site_url('myprofile');?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a> 
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Friends</a> 
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a> 
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a> 
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="<?php echo site_url('logout');?>"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a> 
-                        </li>
-                    </ul>
-                </li>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="<?php echo site_url('myaccount');?>"><i class="fa fa-home" aria-hidden="true"></i> Home
+                                </a> 
+                            </li>
+                            <li>
+                                <a href="<?php echo site_url('myprofile');?>"><i class="fa fa-user" aria-hidden="true"></i> Profile</a> 
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Friends</a> 
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a> 
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a> 
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="<?php echo site_url('logout');?>"><i class="fa fa-sign-out" aria-hidden="true"></i> LogOut</a> 
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="search_friends" id="search_friends" style="width:500px;"placeholder="Search friends..." autocomplete="off">
+                <div class="col-md-6 search-div-class">
+                    <input type="text" class="form-control" name="search_friends" id="search_friends" placeholder="Search friends..." autocomplete="off">
+                    <div class="loader-div">
+                        <img class="loader-image" src="<?php echo base_url();?>assets/images/loader/loader1.gif">
                     </div>
-                    <div class="loader-div" style="display:none">
-                        <img src="<?php echo base_url();?>assets/images/loader/loader1.gif" width="50px" height="10px">
-                    </div>
-                    <div class="friend_list"></div>
+                    <div class="col-md-12 friend_list"></div>
                 </div>
             </div> 
         </div> 

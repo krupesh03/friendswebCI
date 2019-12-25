@@ -87,6 +87,7 @@ function ajax_search_friends(search_term) {
             if(search_term==''){
                 $('.friend_list').html('');
             }else{
+                $('.friend_list').show();
                 $('.friend_list').html(response);
             }
         }

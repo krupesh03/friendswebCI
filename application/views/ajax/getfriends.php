@@ -4,13 +4,11 @@ $i=0;
 foreach($friends_list as $fl){
     ?>
     <div class="friends_class" data-url='<?php echo site_url();?>'>
-        <div class="friend-name">
-            <?php echo ucfirst($fl['fname'])." ".ucfirst($fl['lname']);?>
-        </div>
-        <div class="friend-mail">
-            <?php echo $fl['email'];?>
-        </div>
         <img class="image-class-list" src="<?php echo base_url().$fl['profile_pic'];?>" alt="<?php echo $fl['fname'].".".$fl['lname'];?>" title="<?php echo $fl['fname'].".".$fl['lname'];?>">
+        <div class="friend-details">
+            <div class="friend-name"><?php echo ucfirst($fl['fname'])." ".ucfirst($fl['lname']);?></div>
+            <div class="friend-mail"><?php echo $fl['email'];?></div>
+        </div>
     </div>
     <div class="break-line"></div>
     <?php
