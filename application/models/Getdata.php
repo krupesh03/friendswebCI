@@ -5,7 +5,7 @@ Class Getdata extends CI_Model {
     }
 
     public function signin() {
-        $this->db->select('id, dob');
+        $this->db->select('id, dob, unique_id, creation_date');
         $this->db->from('users');
         $this->db->where('email="'.$this->input->post('login-email').'" and password="'.md5($this->input->post('login-pwd')).'" and deleted=0');
         $result = $this->db->get();
@@ -109,6 +109,14 @@ Class Getdata extends CI_Model {
         $this->db->where('deleted=0 and id='.$storyid);
         $result = $this->db->get();
         return $result->row_array();
+    }
+
+    public function get_relationship_status() {
+        $this->db->select('*');
+        $this->db->from('relation_status');
+        $this->db->where('deleted=0');
+        $result = $this->db->get();
+        return $result->result_array();
     }
 }
 ?>

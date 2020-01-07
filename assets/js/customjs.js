@@ -147,4 +147,33 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on('click', '.settings-list .profile-update', function(e) {
+        e.preventDefault();
+        if($('.settings-list #updateform').hide()) {
+            $('.settings-list #updateform').show();
+        }
+    });
+
+    $(document).on('click', '#cancel_account', function() {
+        $('.settings-list #updateform').hide();
+    });
+
+    $(document).on('click', '#update_account', function() {
+        $(this).attr('disabled', true);
+        $('#cancel_account').attr('disabled', true);
+        formData = $('#updateform').serialize();
+        $.ajax({
+            url: site_url+'profile_update',
+            method: 'post',
+            data: {
+                formData: formData
+            },
+            success: function(res) {
+                $('#update_account').attr('disabled', false);
+                $('#cancel_account').attr('disabled', false);
+                $('#output_msg').text('DONE');
+            }
+        });
+    });
+
 });

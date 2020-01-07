@@ -78,6 +78,10 @@ $route['new_story'] = 'Insertcontrol/upload_story';
 //for updating user images
 $route['update_profile_image'] = 'Insertcontrol/update_profile';
 
+//for settings 
+$route['user_settings'] = 'Settingscontroller';
+$route['profile_update'] = 'Settingscontroller/profile_update';
+
 //for logout
 $route['logout'] = 'Authenticate/logout';
 

@@ -113,7 +113,7 @@ if($this->session->has_userdata('logged_in')){?>
                                 <a href="#"><i class="fa fa-bell" aria-hidden="true"></i> Notifications</a> 
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a> 
+                                <a href="<?php echo site_url('user_settings');?>"><i class="fa fa-gear" aria-hidden="true"></i> Settings</a> 
                             </li>
                             <li class="divider"></li>
                             <li>

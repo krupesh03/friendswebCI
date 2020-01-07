@@ -20,8 +20,9 @@ class Authenticate extends AUTH_controller {
 	}
 
 	public function logout() {
+        $unset_data = array('id', 'dob', 'logged_in', 'unique_id');
         $this->Insertdata->logout_func();
-        $this->session->unset_userdata(array('id', 'dob', 'logged_in'));
+        $this->session->unset_userdata($unset_data);
         redirect('/');
     }
 }
