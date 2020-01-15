@@ -115,7 +115,7 @@ $(document).ready(function(){
             $(this).find('.like-cnt').text(cur_count--);
         }
         $.ajax({
-            url: site_url+'/Insertcontrol/update_like_counts',
+            url: site_url+'update_like_counts',
             type: 'post',
             data: {
                 counter: counter,
@@ -132,7 +132,7 @@ $(document).ready(function(){
         $('#submit_post').attr('disabled', true);
         var formData = new FormData(this);
         $.ajax({
-            url: site_url+'/new_story',
+            url: site_url+'new_story',
             type: 'post',
             data: formData,
             contentType: false,

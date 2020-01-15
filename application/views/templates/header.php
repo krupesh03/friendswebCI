@@ -144,7 +144,7 @@ if($this->session->has_userdata('logged_in')){?>
                 </a> 
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<form class="navbar-form navbar-right" role="search" method="post" action="<?php echo site_url('Authenticate');?>">
+				<form class="navbar-form navbar-right" role="search" method="post" action="<?php echo site_url('login');?>">
 					<div class="form-group">
 						<input type="email" class="form-control" name="login-email" placeholder="Email ID" required>
 					</div>

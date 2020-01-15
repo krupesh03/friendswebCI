@@ -1,7 +1,8 @@
 <?php
-class Getcontroller extends AUTH_Controller {
+class Get extends BASE_controller {
 
     public function getfriendlist() {
+
         if( $this->input->is_ajax_request() ) {
             $data['friends_list'] = $this->Getdata->getmodels_friends();
             $this->load->view('ajax/getfriends',$data);
@@ -9,6 +10,7 @@ class Getcontroller extends AUTH_Controller {
     }
 
     public function loadRecord($rowno=0) {
+
         if ($this->input->is_ajax_request()){
             $rowperpage = 10;
             if( $rowno!=0 ){
@@ -53,6 +55,14 @@ class Getcontroller extends AUTH_Controller {
             echo json_encode($data);
 
         }
+    }
+
+    public function logout() {
+        
+        $unset_data = array('id', 'dob', 'logged_in', 'unique_id');
+        $this->Insertdata->logout_func();
+        $this->session->unset_userdata($unset_data);
+        redirect('/');
     }
 }
 ?>

@@ -1,5 +1,14 @@
 <?php
-class Signup extends AUTH_Controller {
+class Signup extends CI_controller {
+
+    public function __construct() {
+
+        parent::__construct();
+        if( $this->session->userdata('logged_in') ) {
+            redirect('myaccount');
+        }
+    }
+    
     public function index() {
 
         global $site_title;

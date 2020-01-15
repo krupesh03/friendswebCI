@@ -1,5 +1,5 @@
 <?php
-class Authenticate extends AUTH_controller {
+class Authenticate extends CI_controller {
 
 	public function index() {
 
@@ -19,10 +19,4 @@ class Authenticate extends AUTH_controller {
 
 	}
 
-	public function logout() {
-        $unset_data = array('id', 'dob', 'logged_in', 'unique_id');
-        $this->Insertdata->logout_func();
-        $this->session->unset_userdata($unset_data);
-        redirect('/');
-    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-class Settingscontroller extends AUTH_Controller {
+class Settings extends BASE_controller {
 
 	public function index($page = 'settings_homepage') {
 
@@ -19,6 +19,7 @@ class Settingscontroller extends AUTH_Controller {
 	}
 
 	public function profile_update() {
+
 		if($this->input->is_ajax_request()) {
 			parse_str($this->input->post('formData'), $values);
 			return $this->Settingsmodel->profile_update($values);

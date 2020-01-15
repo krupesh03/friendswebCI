@@ -1,7 +1,16 @@
 <?php 
-class Forgotpassword extends AUTH_controller {
+class Forgotpassword extends CI_controller {
+
+    public function __construct() {
+
+        parent::__construct();
+        if( $this->session->userdata('logged_in') ) {
+            redirect('myaccount');
+        }
+    }
 
 	public function index($page='forgotpassword') {
+
 		if(!file_exists(APPPATH.'/views/'.$page.'.php')) {
 			show_404();
 		}
@@ -59,10 +68,58 @@ class Forgotpassword extends AUTH_controller {
         }
     }
 
-    public function resetpwd() {
+    public function resetpwd($page='resetpassword') {
+
+        if(!file_exists(APPPATH.'/views/'.$page.'.php')) {
+            show_404();
+        }
+
         $data['title'] = 'Reset Your Password';
         $this->load->view('templates/header',$data);
-        $this->load->view('resetpassword');
+        $this->load->view($page);
         $this->load->view('templates/footer');
+    }
+
+    public function resetpass_control() {
+        $args = array(
+            array(
+                'field' => 'email',
+                'label' => 'Email',
+                'rules' => 'required|valid_email'
+            ),
+            array(
+                'field' => 'password',
+                'label' => 'Password',
+                'rules' => 'required|min_length[8]'
+            ),
+            array(
+                'field' => 'cpassword',
+                'label' => 'Confirm-Password',
+                'rules' => 'required|min_length[8]|matches[password]'
+            )
+        );
+        $this->form_validation->set_rules($args);
+        if( $this->form_validation->run()==FALSE ){
+            $data['title'] = 'Reset Your Password';
+            $this->load->view('templates/header',$data);
+            $this->load->view('resetpassword');
+            $this->load->view('templates/footer');
+        } else {
+            $values = $this->Getdata->getdata_on_email("and flag='1'");
+            if( count($values)!=0 ){
+                $this->Insertdata->change_pwd($this->input->post('email'),'0');
+                $success_message = "<div class='success_msg'>
+                                        Password has been reset
+                                    </div>";
+                $this->session->set_flashdata('msg',$success_message);
+                redirect('reset_password');
+            } else {
+                $failed_message = "<div class='login_failed_msg'>
+                                        Email ID does not exists or Password reset link is not valid
+                                    </div>";
+                $this->session->set_flashdata('msg',$failed_message);
+                redirect('reset_password');
+            }
+        }
     }
 }

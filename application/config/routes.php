@@ -54,36 +54,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 
 //for forgot password
-$route['forgot_password'] = 'Forgotpassword';
-$route['password_reset_link'] = 'Forgotpassword/send_link';
-$route['reset_password'] = 'Forgotpassword/resetpwd';
-$route['reset_your_password'] = 'Insertcontrol/resetpass_control';
+$route['forgot_password'] = 'forgotpassword';
+$route['password_reset_link'] = 'forgotpassword/send_link';
+$route['reset_password'] = 'forgotpassword/resetpwd';
+$route['reset_your_password'] = 'forgotpassword/resetpass_control';
 
 //for signup functionality
-$route['create_user'] = 'Signup';
+$route['create_user'] = 'signup';
+$route['login'] = 'authenticate';
 
 //for pagination
-$route['user_stories/(:num)'] = 'Getcontroller/loadRecord/$1';
+$route['user_stories/(:num)'] = 'get/loadRecord/$1';
 
 //for after login
-$route['myaccount'] = 'Myaccount';
-$route['myprofile'] = 'Myaccount/myprofile';
+$route['myaccount'] = 'myaccount';
+$route['myprofile'] = 'myaccount/myprofile';
 
 //for friend filter
-$route['getfriendlist'] = 'Getcontroller/getfriendlist';
+$route['getfriendlist'] = 'get/getfriendlist';
 
 //for upload story
-$route['new_story'] = 'Insertcontrol/upload_story';
+$route['new_story'] = 'insert/upload_story';
 
 //for updating user images
-$route['update_profile_image'] = 'Insertcontrol/update_profile';
+$route['update_profile_image'] = 'insert/update_profile';
 
 //for settings 
-$route['user_settings'] = 'Settingscontroller';
-$route['profile_update'] = 'Settingscontroller/profile_update';
+$route['user_settings'] = 'settings';
+$route['profile_update'] = 'settings/profile_update';
+
+$route['update_like_counts'] = 'insert/update_like_counts';
 
 //for logout
-$route['logout'] = 'Authenticate/logout';
+$route['logout'] = 'get/logout';
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -1,7 +1,19 @@
 <?php
-class AUTH_controller extends CI_Controller {
+class BASE_controller extends CI_Controller {
+
+    public function __construct() {
+
+        parent::__construct();
+        $CI =& get_instance();
+        $CI->load->library('session');
+        $CI->load->helper('url');
+        if( !$CI->session->userdata('logged_in') ){
+            redirect('/');
+        }
+    }
 
     function time_elapsed_string($datetime, $full = false) {
+
         $now = new DateTime;
         $ago = new DateTime($datetime);
         $diff = $now->diff($ago);
@@ -28,6 +40,7 @@ class AUTH_controller extends CI_Controller {
     }
 
     public function headerfunction() {
+
         $CI =& get_instance();
         $CI->load->model('Getdata');
         $data['userdata'] = $CI->Getdata->getuserdata();

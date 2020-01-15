@@ -1,50 +1,8 @@
 <?php
-class Insertcontrol extends AUTH_Controller {
-
-    public function resetpass_control() {
-        $args = array(
-            array(
-                'field' => 'email',
-                'label' => 'Email',
-                'rules' => 'required|valid_email'
-            ),
-            array(
-                'field' => 'password',
-                'label' => 'Password',
-                'rules' => 'required|min_length[8]'
-            ),
-            array(
-                'field' => 'cpassword',
-                'label' => 'Confirm-Password',
-                'rules' => 'required|min_length[8]|matches[password]'
-            )
-        );
-        $this->form_validation->set_rules($args);
-        if( $this->form_validation->run()==FALSE ){
-            $data['title'] = 'Reset Your Password';
-            $this->load->view('templates/header',$data);
-            $this->load->view('resetpassword');
-            $this->load->view('templates/footer');
-        } else {
-            $values = $this->Getdata->getdata_on_email("and flag='1'");
-            if( count($values)!=0 ){
-                $this->Insertdata->change_pwd($this->input->post('email'),'0');
-                $success_message = "<div class='success_msg'>
-                                        Password has been reset
-                                    </div>";
-                $this->session->set_flashdata('msg',$success_message);
-                redirect('reset_password');
-            } else {
-                $failed_message = "<div class='login_failed_msg'>
-                                        Email ID does not exists or Password reset link is not valid
-                                    </div>";
-                $this->session->set_flashdata('msg',$failed_message);
-                redirect('reset_password');
-            }
-        }
-    }
+class Insert extends BASE_controller {
 
     public function upload_story() {
+
         $config['upload_path'] = './assets/images/uploads/';
         $config['allowed_types'] = 'jpg|png|gif';
         $config['max_size'] = 0;
@@ -70,6 +28,7 @@ class Insertcontrol extends AUTH_Controller {
     }
 
     public function update_profile() {
+
         $update = 0;
         if($this->input->post('uflag')==1 || $this->input->post('uflag')==2){
             if($this->input->post('uflag')==1){
@@ -108,6 +67,7 @@ class Insertcontrol extends AUTH_Controller {
     }
 
     public function update_like_counts() {
+
         if($this->input->is_ajax_request()){
             $this->Insertdata->update_lcounts();
         }
