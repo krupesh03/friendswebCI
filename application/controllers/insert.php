@@ -20,7 +20,7 @@ class Insert extends BASE_controller {
                     </div>";
         } else {
             $msg = "<div class='login_failed_msg'>
-                        Failed! Something went wrong...
+                        Failed! Something went wrong..
                     </div>";
         }
         $this->session->set_flashdata('storymsg', $msg);
